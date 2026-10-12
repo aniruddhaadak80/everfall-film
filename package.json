@@ -1,0 +1,19 @@
+{
+  "name": "everfall-film",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "EVERFALL — an AI-generated superhero feature film, produced part by part, 100% in the browser + cloud video models.",
+  "scripts": {
+    "validate": "bun scripts/validate.mjs",
+    "test": "vitest run",
+    "characters": "bun scripts/make_characters.mjs",
+    "film": "bun scripts/film_part01.mjs",
+    "assemble": "bun scripts/assemble_part01.mjs",
+    "studio": "cd studio && bun run dev",
+    "studio:build": "cd studio && bun run build"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.3"
+  }
+}
