@@ -2,6 +2,8 @@
 
 **Project folder:** `everfall-film/` — your complete AI feature-film production system.
 
+🔗 **Studio (live):** https://studio-j4308uw0q-aniruddha-adaks-projects.vercel.app · **Repo:** https://github.com/aniruddhaadak80/everfall-film
+
 **Genre:** Superhero action-fantasy (Avengers-style team movie)
 **Language of the film:** Simple English (easy to understand), with some Bengali flavor for the city
 **Target quality:** 1080p minimum, 4K final pass planned. Photorealistic looks.
