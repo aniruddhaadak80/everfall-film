@@ -1,0 +1,204 @@
+{
+  "part": "01",
+  "title": "THE CRACK",
+  "resolution": "1080p",
+  "defaultModel": "bytedance/seedance-2-0",
+  "shots": [
+    {
+      "id": "01",
+      "desc": "City skyline night",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Cinematic wide aerial shot of a futuristic Indian megacity at night, a wide river with an old iron bridge on the left and glass skyscrapers on the right, yellow street trams moving below, wet streets reflecting neon signs, deep blue night sky, photorealistic, anamorphic lens, slow gentle push-in camera move, atmospheric light haze, film grain, 24fps movie look"
+    },
+    {
+      "id": "02",
+      "desc": "River + dark bridge",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Slow horizontal pan across a dark river at night, an old 100-year-old iron suspension bridge lit by warm sodium lamps, one yellow tram standing still on it, reflections trembling on black water, distant city glow, photorealistic, moody, cinematic color grade, film grain"
+    },
+    {
+      "id": "03",
+      "desc": "Aarav's repair shop",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Interior of a small cluttered electrical repair shop in India at night, warm yellow bulb light, old ceiling fan turning slowly, shelves of spare parts and radios, a wall with family photographs, dust in the light beam, photorealistic, slow dolly-in, cinematic, film grain"
+    },
+    {
+      "id": "04",
+      "desc": "Aarav close-up",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Close-up of a 24-year-old Indian man with messy black hair and a small scar on his left eyebrow, warm brown skin, tired soft eyes, wearing a grey hoodie with a torn sleeve, soldering a small radio board, small sad smile, warm workshop lighting, shallow depth of field, photorealistic skin texture, 85mm lens, movie quality"
+    },
+    {
+      "id": "05",
+      "desc": "THE CRACK — sky splits",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Night sky over a modern city, the sky suddenly splits open in a perfectly straight line of white-blue fire, like a glass plate cracking from edge to edge, shockwave of clouds pushed away, city below in silhouette, ultra dramatic, photorealistic, slow tilt-up camera move, volumetric light, film grain"
+    },
+    {
+      "id": "06",
+      "desc": "Blue fire rain falls",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Blue-white embers of light falling slowly like warm rain over a city at night, landing on roofs, roads and open hands without burning, soft glow on wet streets, people standing still watching, photorealistic, magical but grounded, wide static shot, volumetric light, film grain"
+    },
+    {
+      "id": "07",
+      "desc": "People look up",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Handheld close-up shots of ordinary people of different ages looking up at the sky in silence, faces lit blue from above, a child, an old man, a woman in a nightgown, genuine wonder and fear, photorealistic, documentary feel, shallow depth of field"
+    },
+    {
+      "id": "08",
+      "desc": "Tram windows blow out",
+      "duration": 4,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "An old yellow tram on an iron bridge at night, all its windows blow outward in one moment from an invisible shockwave, glass sparkling in the air, bridge cables vibrating, photorealistic, quick camera zoom, dramatic rim light from the blue fire above"
+    },
+    {
+      "id": "09",
+      "desc": "Aarav hit by the fire",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Slow motion close-up, a 24-year-old Indian man standing in the street, a single piece of blue-white fire falls onto his chest, his clothes ripple, his hair lifts, his eyes glow white-blue for a second, then everything goes white, photorealistic, 120fps slow motion, anamorphic lens flare, film grain"
+    },
+    {
+      "id": "10",
+      "desc": "Bridge collapses, Aarav wakes",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Low angle handheld shot of a collapsed iron bridge at night, dust and steam, twisted metal, a 24-year-old Indian man in a grey hoodie waking up on the ground, shaking his head, confused, distant screaming, photorealistic, dramatic low-key lighting, film grain"
+    },
+    {
+      "id": "11",
+      "desc": "Iron saves the girl",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A huge piece of iron bridge falls toward a small Indian girl standing frozen in the street, a 24-year-old man reaches his hand out, the iron STOPS in mid-air and slowly lowers to the ground, blue rings of light moving up his arm, floating dust, photorealistic, slow orbit camera move around them, dramatic volumetric light from above"
+    },
+    {
+      "id": "12",
+      "desc": "Blue rings on arm",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Extreme macro close-up of glowing blue rings moving up a young man's forearm under the skin like a tattoo, warm skin texture and pores visible, cool blue glow reflecting in his wide scared eye, photorealistic, anamorphic lens flare, shallow depth of field"
+    },
+    {
+      "id": "13",
+      "desc": "Burned library, glass books",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Interior of an old city library at night, every book on the shelves turned into translucent blue glass, pages frozen mid-flip inside glass blocks, a detective's flashlight beam passing through, beautiful and wrong, photorealistic, slow dolly-in, cool blue color grade"
+    },
+    {
+      "id": "14",
+      "desc": "Lena grabs Aarav",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Over-the-shoulder shot of a 31-year-old woman detective with short dark hair and a worn brown leather jacket grabbing the arm of a scared young man in a grey hoodie on a street corner at night, police tape behind them, rain starting to fall, photorealistic, quick handheld camera, cinematic noir lighting"
+    },
+    {
+      "id": "15",
+      "desc": "Blue handprint on her wrist",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Extreme macro close-up of a woman's wrist, a glowing blue handprint fading on her skin, pores and veins visible, one drop of rain hitting the glow and steaming, photorealistic, shallow depth of field, cold blue light"
+    },
+    {
+      "id": "16a",
+      "desc": "The Four — Bo screams",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "Rooftop at night, a 13-year-old boy with big taped glasses and a yellow rain jacket screaming, a visible shockwave of sound shattering every window on the street below, birds fleeing, photorealistic, fast camera pull-back"
+    },
+    {
+      "id": "16b",
+      "desc": "The Four — Sister Rose blade",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "Interior shelter, a 58-year-old Indian nun with silver hair in a white saree, a blade of golden-white light coming out of her saree border and cutting a wooden table clean in half, warm interior light, photorealistic, static wide shot"
+    },
+    {
+      "id": "16c",
+      "desc": "The Four — Aiko gravity",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "Laboratory, a 36-year-old Japanese woman with red glasses and a white lab coat sitting in a chair that floats slowly around the room, papers flying, she smiles, cold lab lighting, photorealistic, slow orbit"
+    },
+    {
+      "id": "16d",
+      "desc": "The Four — Ghost",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "A dark wall, the shadow of a young person with a gold ring glowing in the eye looking straight into the camera, out of focus, heavy grain, night, photorealistic, static"
+    },
+    {
+      "id": "17",
+      "desc": "Vane at the tower window",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "High floor of a glass skyscraper at night, a 62-year-old wealthy man with silver hair, short grey beard and deep calm blue eyes in a black three-piece suit stands at the window watching blue fire rain over the city, a small red mark under his left eye, reflection of the city in the glass, photorealistic, slow push-in camera, dramatic silhouette"
+    },
+    {
+      "id": "18",
+      "desc": "Vane's red eye glow",
+      "duration": 3,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "Extreme close-up of an old man's calm blue eye, the pupil glows deep red for one second, thin veins visible, photorealistic, static, macro lens, cinematic shadow"
+    },
+    {
+      "id": "19",
+      "desc": "Archivist in bookshop",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/archivist.png",
+      "prompt": "Interior of a warm old bookshop at night, an 80-year-old blind Indian woman with white hair and thick round glasses, holding a small cup of tea, turning her face up toward the blue light coming through the window, shelves of old books, warm lamp light, photorealistic, static shot, golden color grade"
+    },
+    {
+      "id": "20",
+      "desc": "Title card EVERFALL",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "The word EVERFALL in clean white thin sans-serif letters centered on a background of a cracked night sky with slow blue fire falling behind it, subtle letters glow, cinematic, minimal, film grain, no other text"
+    }
+  ]
+}

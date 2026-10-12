@@ -1,4 +1,4 @@
-import planData from '../../prompts/part01.json'
+import planData from './part01.json'
 
 export interface Shot {
   id: string
