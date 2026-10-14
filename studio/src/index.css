@@ -72,12 +72,33 @@ main { flex: 1; width: min(1180px, 100%); margin: 0 auto; padding: 22px; display
 .char-prompt summary { cursor: pointer; font-size: 11px; color: #38bdf8; }
 .char-prompt p { font-size: 11.5px; color: #8b98b8; line-height: 1.6; background: #0b0e14; border-radius: 8px; padding: 10px; margin: 8px 0; }
 
+/* ---------- progress ---------- */
+.progress-row { margin-bottom: 12px; }
+.progress-row:last-child { margin-bottom: 0; }
+.progress-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; font-size: 12.5px; }
+.progress { height: 7px; background: #1a2238; border-radius: 5px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: linear-gradient(90deg, #38bdf8, #34d399); border-radius: 5px; transition: width 0.3s ease; }
+
+/* ---------- part switch ---------- */
+.part-switch { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.part-btn { border: 1px solid #2a3550; background: #131a2a; color: #8b98b8; padding: 7px 14px; border-radius: 8px; font-size: 12.5px; }
+.part-btn.active { background: #3b82f6; border-color: #3b82f6; color: #fff; font-weight: 600; }
+.small-hint { font-size: 11px; }
+
 /* ---------- shots ---------- */
 .shots { display: flex; flex-direction: column; gap: 6px; }
 .shot { background: #131a2a; border: 1px solid #1e2740; border-radius: 10px; overflow: hidden; }
 .shot.has-ref { border-left: 3px solid #38bdf8; }
-.shot-head { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: none; color: inherit; padding: 10px 12px; font-size: 12.5px; cursor: pointer; }
-.shot-head:hover { background: #101728; }
+.shot.filmed { border-left: 3px solid #34d399; }
+.shot-head { display: flex; align-items: center; gap: 8px; }
+.shot-check {
+  flex: none; width: 20px; height: 20px; border-radius: 6px;
+  border: 1px solid #2a3550; background: #0f1524; color: #fff;
+  font-size: 12px; line-height: 1; padding: 0;
+}
+.shot-check.done { background: #34d399; border-color: #34d399; font-weight: 700; }
+.shot-main { display: flex; align-items: center; gap: 10px; flex: 1; text-align: left; background: none; border: none; color: inherit; padding: 10px 12px; font-size: 12.5px; cursor: pointer; }
+.shot-main:hover { background: #101728; }
 .shot-id { font-weight: 700; color: #38bdf8; min-width: 30px; }
 .shot-desc { flex: 1; color: #e2e8f0; }
 .shot-meta { color: #7f8db0; font-size: 11px; white-space: nowrap; }

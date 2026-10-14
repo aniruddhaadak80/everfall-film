@@ -7,6 +7,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (p) => readFileSync(join(root, p), 'utf8')
 
 const plan = JSON.parse(read('prompts/part01.json'))
+const plan2 = JSON.parse(read('prompts/part02.json'))
 
 describe('shot plan (prompts/part01.json)', () => {
   it('has 23 shots', () => {
@@ -88,6 +89,35 @@ describe('characters', () => {
   })
 })
 
+describe('part 02 shot plan', () => {
+  it('has 19 shots', () => {
+    expect(plan2.shots).toHaveLength(19)
+  })
+
+  it('runs about 2 minutes', () => {
+    const sec = plan2.shots.reduce((n, s) => n + s.duration, 0)
+    expect(sec).toBeGreaterThan(80)
+    expect(sec).toBeLessThan(160)
+  })
+
+  it('every shot has a detailed prompt and safe duration', () => {
+    for (const s of plan2.shots) {
+      expect(s.prompt.length).toBeGreaterThan(80)
+      expect(s.duration).toBeGreaterThanOrEqual(3)
+      expect(s.duration).toBeLessThanOrEqual(10)
+    }
+  })
+
+  it('has hero look-sheet shots', () => {
+    expect(plan2.shots.filter((s) => s.reference).length).toBeGreaterThanOrEqual(8)
+  })
+
+  it('ends with the Part 02 title card', () => {
+    const last = plan2.shots[plan2.shots.length - 1]
+    expect(last.prompt).toContain('WANTED SPARKS')
+  })
+})
+
 describe('script + shot list consistency', () => {
   const script = read('03-SCRIPT-PART-01.md')
   const shots = read('04-SHOT-LIST-PART-01.md')
@@ -105,6 +135,21 @@ describe('script + shot list consistency', () => {
   it('every prompt shot appears in the shot list', () => {
     for (const s of plan.shots) {
       expect(shots).toContain(s.desc.split('—')[0].trim().replace(/\s+/g, ' '))
+    }
+  })
+
+  it('part02 script has 8 scenes and key lines', () => {
+    const script2 = read('05-SCRIPT-PART-02.md')
+    expect(script2.match(/### SCENE \d+/g)).toHaveLength(8)
+    for (const line of ['The tower is the heart', 'back door open']) {
+      expect(script2).toContain(line)
+    }
+  })
+
+  it('every part02 prompt shot appears in the part02 shot list', () => {
+    const shots2 = read('06-SHOT-LIST-PART-02.md')
+    for (const s of plan2.shots) {
+      expect(shots2).toContain(s.desc)
     }
   })
 })

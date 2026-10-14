@@ -12,4 +12,10 @@ describe('studio data sync', () => {
     const b = readFileSync(join(filmRoot, 'prompts', 'part01.json'), 'utf8')
     expect(a).toBe(b)
   })
+
+  it('studio part02 copy matches the canonical prompts/part02.json', () => {
+    const a = readFileSync(join(studioRoot, 'src', 'part02.json'), 'utf8')
+    const b = readFileSync(join(filmRoot, 'prompts', 'part02.json'), 'utf8')
+    expect(a).toBe(b)
+  })
 })

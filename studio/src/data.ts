@@ -1,4 +1,5 @@
 import planData from './part01.json'
+import planData2 from './part02.json'
 
 export interface Shot {
   id: string
@@ -10,7 +11,7 @@ export interface Shot {
   prompt: string
 }
 
-export const plan = planData as {
+export interface PartPlan {
   part: string
   title: string
   resolution: string
@@ -18,7 +19,11 @@ export const plan = planData as {
   shots: Shot[]
 }
 
-export const totalSeconds = plan.shots.reduce((n, s) => n + s.duration, 0)
+export const plan = planData as PartPlan
+export const plan2 = planData2 as PartPlan
+export const parts = [plan, plan2]
+
+export const totalSeconds = (p: PartPlan) => p.shots.reduce((n, s) => n + s.duration, 0)
 
 export interface Character {
   id: string

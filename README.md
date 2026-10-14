@@ -22,10 +22,11 @@ So we do it **part by part**, like you said. Each part is 4–8 minutes and is f
 | Stage | What we make | Status |
 |---|---|---|
 | Pre-production | Story bible, characters, script, shot list, music plan | DONE (this folder) |
-| Part 01 "The Crack" | 16 shots, 1080p, sound + voices, final cut | READY TO FILM (needs video API credits) |
-| Parts 02–20 | Same pipeline, repeat | Later — you join in |
+| Part 01 "The Crack" | 23 shots, 1080p, sound + voices, final cut | READY TO FILM (needs video API credits) |
+| Part 02 "Wanted Sparks" | 19 shots, 1080p, sound + voices, final cut | READY TO FILM (needs video API credits) |
+| Parts 03–20 | Same pipeline, repeat | Later — you join in |
 
-Cost/time math for Part 01 (16 shots × ~8 seconds):
+Cost/time math for Part 01 (23 shots × ~5 seconds average):
 - Video generation: ~2 minutes of footage → roughly $10–$60 in API credits (depends on model)
 - Everything else (script, prompts, edit plan): done by AI, free
 
@@ -37,15 +38,20 @@ about 6–12 months of part-by-part work — very doable with AI, not doable in 
 ## What is inside this folder
 
 ```
-01-STORY-BIBLE.md      the world, the rules, the full story arc (all parts)
-02-CHARACTERS.md       all 7 characters: face, body, voice, costume, power — ultra detailed
-03-SCRIPT-PART-01.md   the full script for Part 01 with dialogue
-04-SHOT-LIST-PART-01.md every shot: camera, time, sound, exact AI prompt
-05-PROMPTS.md          copy-paste prompt bank for each video model
-06-MUSIC-AND-SOUND.md  music themes + cue sheet + sound design plan
-PIPELINE.md            how to film a part from start to finish
-scripts/               one-command generators and assembly
-shots/                 where finished video clips get saved
+01-STORY-BIBLE.md        the world, the rules, the full story arc (all parts)
+02-CHARACTERS.md         all 8 characters: face, body, voice, costume, power — ultra detailed
+03-SCRIPT-PART-01.md     the full script for Part 01 with dialogue
+04-SHOT-LIST-PART-01.md  every shot: camera, time, sound, exact AI prompt
+05-SCRIPT-PART-02.md     the full script for Part 02 with dialogue
+06-MUSIC-AND-SOUND.md    music themes + cue sheet + sound design plan
+06-SHOT-LIST-PART-02.md every shot of Part 02: camera, time, sound, exact AI prompt
+PIPELINE.md              how to film a part from start to finish
+prompts/part01.json      machine-readable shot plan (Part 01, 23 shots)
+prompts/part02.json      machine-readable shot plan (Part 02, 19 shots)
+scripts/                 one-command generators and assembly + validator
+studio/                  the film studio dashboard (Vite + React + TS)
+shots/                   where finished video clips get saved
+looks/                   where character look sheets get saved
 ```
 
 ## How to start

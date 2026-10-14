@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { arc, characters, plan, themes, totalSeconds, type Shot } from './data'
+import { useEffect, useState } from 'react'
+import { arc, characters, parts, themes, totalSeconds, type PartPlan, type Shot } from './data'
 import { beltCommand, CopyButton, Section } from './components'
 
 type Tab = 'overview' | 'story' | 'characters' | 'shots' | 'music' | 'pipeline'
@@ -13,16 +13,54 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'pipeline', label: 'Pipeline' },
 ]
 
-function ShotCard({ shot }: { shot: Shot }) {
+/* ---------- filmed-status tracking (localStorage) ---------- */
+const LS_KEY = 'everfall:filmed'
+
+function loadFilmed(): Set<string> {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(LS_KEY) ?? '[]'))
+  } catch {
+    return new Set()
+  }
+}
+
+function useFilmed() {
+  const [filmed, setFilmed] = useState<Set<string>>(loadFilmed)
+  useEffect(() => {
+    localStorage.setItem(LS_KEY, JSON.stringify([...filmed]))
+  }, [filmed])
+  const toggle = (key: string) =>
+    setFilmed((prev) => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
+  return { filmed, toggle }
+}
+
+function ShotCard({ shot, part, filmed, onToggle }: { shot: Shot; part: string; filmed: Set<string>; onToggle: (k: string) => void }) {
   const [open, setOpen] = useState(false)
+  const key = `${part}:${shot.id}`
+  const done = filmed.has(key)
   return (
-    <div className={`shot${shot.reference ? ' has-ref' : ''}`}>
-      <button type="button" className="shot-head" onClick={() => setOpen((o) => !o)}>
-        <span className="shot-id">{shot.id}</span>
-        <span className="shot-desc">{shot.desc}</span>
-        <span className="shot-meta">{shot.duration}s · {shot.model.split('/')[1]}</span>
-        <span className={`shot-chevron${open ? ' open' : ''}`}>▾</span>
-      </button>
+    <div className={`shot${shot.reference ? ' has-ref' : ''}${done ? ' filmed' : ''}`}>
+      <div className="shot-head">
+        <button
+          type="button"
+          className={`shot-check${done ? ' done' : ''}`}
+          title={done ? 'mark as not filmed' : 'mark as filmed'}
+          onClick={() => onToggle(key)}
+        >
+          {done ? '✓' : ''}
+        </button>
+        <button type="button" className="shot-main" onClick={() => setOpen((o) => !o)}>
+          <span className="shot-id">{shot.id}</span>
+          <span className="shot-desc">{shot.desc}</span>
+          <span className="shot-meta">{shot.duration}s · {shot.model.split('/')[1]}</span>
+          <span className={`shot-chevron${open ? ' open' : ''}`}>▾</span>
+        </button>
+      </div>
       {open && (
         <div className="shot-body">
           <p className="shot-prompt">{shot.prompt}</p>
@@ -39,7 +77,12 @@ function ShotCard({ shot }: { shot: Shot }) {
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('overview')
-  const charShots = useMemo(() => plan.shots.filter((s) => s.reference).length, [])
+  const [partId, setPartId] = useState('01')
+  const { filmed, toggle } = useFilmed()
+  const part: PartPlan = partId === '02' ? parts[1] : parts[0]
+  const partFilmed = part.shots.filter((s) => filmed.has(`${part.part}:${s.id}`)).length
+  const allFilmed = parts.reduce((n, p) => n + p.shots.filter((s) => filmed.has(`${p.part}:${s.id}`)).length, 0)
+  const allTotal = parts.reduce((n, p) => n + p.shots.length, 0)
 
   return (
     <div className="app">
@@ -63,6 +106,21 @@ export default function App() {
       <main>
         {tab === 'overview' && (
           <>
+            <Section title="Production progress" right={<span className="pill">{allFilmed}/{allTotal} shots filmed</span>}>
+              {parts.map((p) => {
+                const done = p.shots.filter((s) => filmed.has(`${p.part}:${s.id}`)).length
+                const pct = Math.round((done / p.shots.length) * 100)
+                return (
+                  <div key={p.part} className="progress-row">
+                    <div className="progress-label">
+                      <b>Part {p.part} — “{p.title}”</b>
+                      <span className="muted">{done}/{p.shots.length} shots · {totalSeconds(p)}s of film</span>
+                    </div>
+                    <div className="progress"><span style={{ width: `${pct}%` }} /></div>
+                  </div>
+                )
+              })}
+            </Section>
             <Section title="The film" right={<span className="pill">1080p · sound + voices</span>}>
               <p className="logline">
                 <b>EVERFALL.</b> The sky broke one night. Blue fire fell like rain and did not burn.
@@ -70,10 +128,10 @@ export default function App() {
                 plan woke with them.
               </p>
               <div className="stat-grid">
-                <div className="stat"><b>{plan.shots.length}</b><span>shots in Part 01</span></div>
-                <div className="stat"><b>{totalSeconds}s</b><span>of film</span></div>
+                <div className="stat"><b>{allTotal}</b><span>shots planned</span></div>
+                <div className="stat"><b>{parts.reduce((n, p) => n + totalSeconds(p), 0)}s</b><span>of film</span></div>
                 <div className="stat"><b>{characters.length}</b><span>characters</span></div>
-                <div className="stat"><b>{charShots}</b><span>hero shots</span></div>
+                <div className="stat"><b>{parts[0].shots.filter((s) => s.reference).length + parts[1].shots.filter((s) => s.reference).length}</b><span>hero shots</span></div>
                 <div className="stat"><b>{themes.length}</b><span>music themes</span></div>
                 <div className="stat"><b>23</b><span>parts planned</span></div>
               </div>
@@ -150,11 +208,26 @@ export default function App() {
 
         {tab === 'shots' && (
           <Section
-            title={`Shot list — Part 01`}
-            right={<span className="pill">{plan.shots.length} shots · {totalSeconds}s · expand for prompts</span>}
+            title={`Shot list — Part ${part.part} “${part.title}”`}
+            right={<span className="pill">{partFilmed}/{part.shots.length} filmed · {totalSeconds(part)}s</span>}
           >
+            <div className="part-switch">
+              {parts.map((p) => (
+                <button
+                  key={p.part}
+                  type="button"
+                  className={`part-btn${partId === p.part ? ' active' : ''}`}
+                  onClick={() => setPartId(p.part)}
+                >
+                  Part {p.part} · {p.title}
+                </button>
+              ))}
+              <span className="muted small-hint">check a shot when it is filmed — saved in this browser</span>
+            </div>
             <div className="shots">
-              {plan.shots.map((s) => <ShotCard key={s.id} shot={s} />)}
+              {part.shots.map((s) => (
+                <ShotCard key={s.id} shot={s} part={part.part} filmed={filmed} onToggle={toggle} />
+              ))}
             </div>
           </Section>
         )}

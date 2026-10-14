@@ -1,0 +1,173 @@
+{
+  "part": "02",
+  "title": "WANTED SPARKS",
+  "resolution": "1080p",
+  "defaultModel": "bytedance/seedance-2-0",
+  "shots": [
+    {
+      "id": "01",
+      "desc": "Morning after — city blames the six",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Morning after a city-wide disaster, news vans and police barricades on wet streets, a giant public screen showing six blurred suspect photos with the word TERRORISTS in bold, crowds in masks watching, military drones hovering over a modern Indian megacity, overcast grey light, photorealistic, cinematic wide shot, film grain"
+    },
+    {
+      "id": "02",
+      "desc": "Aarav hides in the old metro",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Underground abandoned metro station at night, a 24-year-old Indian man in a grey torn hoodie sitting alone on an old bench under a flickering tube light, blue police drone lights sweeping through a distant tunnel, shadows of wanted posters on the wall, photorealistic, slow dolly-in, cold blue rim light, film grain"
+    },
+    {
+      "id": "03",
+      "desc": "Bo appears — the scream",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "A 13-year-old street boy with big taped glasses and an oversized yellow rain jacket appears from the dark tunnel and screams at a drone, a visible shockwave of sound shattering every fluorescent tube in the abandoned metro station, sparks and glass hanging in the air, photorealistic, fast camera pull-back, dramatic rim light"
+    },
+    {
+      "id": "04",
+      "desc": "Aarav catches the shards mid-air",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A 24-year-old Indian man in a grey hoodie reaches his hand out and dozens of shards of glass and iron freeze in mid-air around him, blue rings of light crawling up his forearm, his terrified wide eyes reflecting the floating debris, underground station, photorealistic, slow orbit camera, volumetric light"
+    },
+    {
+      "id": "05",
+      "desc": "Rose's shelter under attack",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "Night shelter interior full of sleeping children, police drones crashing through the windows, a 58-year-old Indian nun with silver hair in a white saree stands protectively in front of the children, a blade of golden-white light extends from her saree border and slices a falling drone clean in half, sparks and smoke, photorealistic, dramatic backlight, film grain"
+    },
+    {
+      "id": "06",
+      "desc": "Rose sheathes the light",
+      "duration": 4,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "Close-up of the 58-year-old nun's hand closing into a fist, the blade of light folding back into the blue border of her saree like a switchblade, her calm hawk-like eyes, children hiding behind her, smoke in the air, photorealistic, shallow depth of field"
+    },
+    {
+      "id": "07",
+      "desc": "Aiko discovers the call",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "Dark laboratory, a 36-year-old Japanese woman with red glasses and a white lab coat stares at a holographic waveform pulsing from a small black star-shard fragment on a steel table, the waveform looks like a heartbeat, her face lit blue, data screens behind her showing a map of the city with six glowing points, photorealistic, slow push-in"
+    },
+    {
+      "id": "08",
+      "desc": "The call comes from the tower",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Holographic city map zooming into a single glass skyscraper tower, six blue points of light scattered across the city and all of them sending thin signal lines toward the tower, a woman's hand reaching toward the hologram, photorealistic, dark lab, blue light"
+    },
+    {
+      "id": "09",
+      "desc": "Aiko makes the choice",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "The 36-year-old Japanese scientist closes her eyes and takes the star-shard fragment in her bare hand, a thin blue line of light running from the shard to her wrist like a vein, her small wrong smile returns, cold laboratory light, photorealistic, static close-up"
+    },
+    {
+      "id": "10",
+      "desc": "Lena in the evidence room",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Basement police evidence room at night, a 31-year-old woman detective with short dark hair and a brown leather jacket opens a steel locker labeled CLASSIFIED, inside a single grey dead star-shard sits on black velvet, cold fluorescent light, photorealistic, slow dolly-in, noir shadows"
+    },
+    {
+      "id": "11",
+      "desc": "The shard whispers",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Extreme macro close-up of a grey dead star-shard on black velvet, a thin blue vein of light crawling across its cracked surface like a memory trying to wake, the detective's grey-green eye reflected in the shard, photorealistic, macro lens, cold blue glow"
+    },
+    {
+      "id": "12",
+      "desc": "The memory that is not hers",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Vision flash: a night sky cracking open 40 years ago over the same city, a small boy with a red mark under his left eye watching blue fire fall, the vision dissolves back to the detective's face, tears she did not expect, double exposure effect, photorealistic, dreamlike color grade"
+    },
+    {
+      "id": "13",
+      "desc": "Vane visits the commissioner",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "Elegant office of a police commissioner, a 62-year-old wealthy man in a black three-piece suit shakes hands with a nervous uniformed officer, a small red mark under his left eye, his black leather gloves, a silver pocket watch chain visible, floor-to-ceiling windows with the city behind, photorealistic, slow push-in, warm polite menace"
+    },
+    {
+      "id": "14",
+      "desc": "The glove hides a shard",
+      "duration": 4,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Extreme close-up of an old man's black leather glove as he adjusts his cuff, for one second the leather turns translucent and a red glowing star-shard is visible stitched into the glove's lining, then it is leather again, photorealistic, macro lens, dramatic shadow"
+    },
+    {
+      "id": "15",
+      "desc": "Standoff in the hideout",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Underground hideout, a 24-year-old man in a grey hoodie and a 13-year-old boy in a yellow rain jacket face off against a 31-year-old woman detective in a brown leather jacket holding up her badge, tension, a nun in a white saree watching from the shadows, single hanging bulb, photorealistic, over-the-shoulder handheld camera"
+    },
+    {
+      "id": "16",
+      "desc": "Ghost names the heart",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "A mysterious androgynous young person with long black hair and one white streak steps out of a wall shadow into the underground hideout, grey eyes with a faint gold ring, everyone freezes, double-echo voice implied by the stillness, photorealistic, slow push-in, cold rim light"
+    },
+    {
+      "id": "17",
+      "desc": "Escape through the old city",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Chase through narrow old-city alleyways at night, four young people and a detective running toward the camera, police drones sweeping searchlights behind them, washing lines and neon signs overhead, wet cobblestones, photorealistic, fast handheld camera, blue and orange contrast lighting, film grain"
+    },
+    {
+      "id": "18",
+      "desc": "Aiko's signal",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "The 36-year-old Japanese scientist at her lab window watches the drones chase the group through the city, she presses her palm to the glass and a thin blue line of light runs from her wrist into the building's frame, she whispers, cold lab light against warm city glow, photorealistic, static shot"
+    },
+    {
+      "id": "19",
+      "desc": "Title card — Part 02",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "The words EVERFALL in clean white thin sans-serif letters above WANTED SPARKS in smaller letters, centered over a night city skyline with police drones sweeping searchlights, cinematic, minimal, film grain, no other text"
+    }
+  ]
+}
