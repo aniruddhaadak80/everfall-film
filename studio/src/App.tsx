@@ -387,7 +387,7 @@ bun scripts/assemble_part01.mjs`}</pre>
       </main>
 
       <footer className="foot">
-        EVERFALL · AI feature film · 3 parts ready · made with the browser + cloud video models
+        EVERFALL · AI feature film · 4 parts ready · made with the browser + cloud video models
       </footer>
     </div>
   )

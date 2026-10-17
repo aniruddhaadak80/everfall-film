@@ -118,6 +118,107 @@ describe('part 02 shot plan', () => {
   })
 })
 
+describe('part 03 shot plan (The Iron Boy)', () => {
+  const plan3 = JSON.parse(read('prompts/part03.json'))
+
+  it('has 19 shots', () => {
+    expect(plan3.shots).toHaveLength(19)
+  })
+
+  it('targets 1080p with a defined title', () => {
+    expect(plan3.resolution).toBe('1080p')
+    expect(plan3.title).not.toBe('')
+    expect(plan3.title.toLowerCase()).toContain('iron boy')
+  })
+
+  it('runs about 2 minutes', () => {
+    const sec = plan3.shots.reduce((n, s) => n + s.duration, 0)
+    expect(sec).toBeGreaterThan(80)
+    expect(sec).toBeLessThan(160)
+  })
+
+  it('every shot has a detailed prompt, safe duration and valid model', () => {
+    for (const s of plan3.shots) {
+      expect(s.prompt.length).toBeGreaterThan(80)
+      expect(s.duration).toBeGreaterThanOrEqual(3)
+      expect(s.duration).toBeLessThanOrEqual(10)
+      expect(s.model).toMatch(/^[a-z0-9-]+\/[a-z0-9-]+$/)
+    }
+  })
+
+  it('has hero look-sheet shots', () => {
+    expect(plan3.shots.filter((s) => s.reference).length).toBeGreaterThanOrEqual(6)
+  })
+
+  it('every shot desc appears in the part03 shot list', () => {
+    const shots3 = read('08-SHOT-LIST-PART-03.md')
+    for (const s of plan3.shots) {
+      expect(shots3).toContain(s.desc)
+    }
+  })
+})
+
+describe('part 04 shot plan (Shadow Detective)', () => {
+  const plan4 = JSON.parse(read('prompts/part04.json'))
+
+  it('has 20 shots', () => {
+    expect(plan4.shots).toHaveLength(20)
+  })
+
+  it('targets 1080p with a defined title', () => {
+    expect(plan4.resolution).toBe('1080p')
+    expect(plan4.title).toBe('Shadow Detective')
+  })
+
+  it('runs about 2 minutes', () => {
+    const sec = plan4.shots.reduce((n, s) => n + s.duration, 0)
+    expect(sec).toBeGreaterThan(100)
+    expect(sec).toBeLessThan(180)
+  })
+
+  it('every shot has a detailed prompt, safe duration, audio flag and valid model', () => {
+    for (const s of plan4.shots) {
+      expect(s.prompt.length).toBeGreaterThan(80)
+      expect(s.duration).toBeGreaterThanOrEqual(3)
+      expect(s.duration).toBeLessThanOrEqual(10)
+      expect(typeof s.generate_audio).toBe('boolean')
+      expect(s.model).toMatch(/^[a-z0-9-]+\/[a-z0-9-]+$/)
+    }
+  })
+
+  it('shot ids are unique', () => {
+    expect(new Set(plan4.shots.map((s) => s.id)).size).toBe(plan4.shots.length)
+  })
+
+  it('has hero look-sheet shots', () => {
+    expect(plan4.shots.filter((s) => s.reference).length).toBeGreaterThanOrEqual(10)
+  })
+
+  it('every shot desc appears in the part04 shot list', () => {
+    const shots4 = read('10-SHOT-LIST-PART-04.md')
+    for (const s of plan4.shots) {
+      expect(shots4).toContain(s.desc)
+    }
+  })
+
+  it('the part04 script exists with 8 scenes and the key lines', () => {
+    const script4 = read('09-SCRIPT-PART-04.md')
+    expect(script4.match(/### SCENE \d+/g)).toHaveLength(8)
+    for (const line of ['Shadows remember', 'She is stored. Between stamps, in the dark, dry and nine', 'Then we rob him']) {
+      expect(script4).toContain(line)
+    }
+  })
+
+  it('shot descriptions stay unique across parts 01–04', () => {
+    const all = [
+      ...plan.shots, ...plan2.shots,
+      ...JSON.parse(read('prompts/part03.json')).shots,
+      ...plan4.shots,
+    ].map((s) => s.desc)
+    expect(new Set(all).size).toBe(all.length)
+  })
+})
+
 describe('script + shot list consistency', () => {
   const script = read('03-SCRIPT-PART-01.md')
   const shots = read('04-SHOT-LIST-PART-01.md')
@@ -187,6 +288,10 @@ describe('project structure', () => {
       '04-SHOT-LIST-PART-01.md', '06-MUSIC-AND-SOUND.md', 'PIPELINE.md', 'README.md',
       'scripts/make_characters.mjs', 'scripts/film_part01.mjs', 'scripts/assemble_part01.mjs',
       'scripts/validate.mjs', 'prompts/part01.json',
+      '05-SCRIPT-PART-02.md', '06-SHOT-LIST-PART-02.md',
+      '07-SCRIPT-PART-03.md', '08-SHOT-LIST-PART-03.md',
+      '09-SCRIPT-PART-04.md', '10-SHOT-LIST-PART-04.md',
+      'prompts/part02.json', 'prompts/part03.json', 'prompts/part04.json',
     ]) {
       expect(existsSync(join(root, f))).toBe(true)
     }

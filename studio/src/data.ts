@@ -1,6 +1,7 @@
 import planData from './part01.json'
 import planData2 from './part02.json'
 import planData3 from './part03.json'
+import planData4 from './part04.json'
 
 export interface Shot {
   id: string
@@ -23,7 +24,8 @@ export interface PartPlan {
 export const plan = planData as PartPlan
 export const plan2 = planData2 as PartPlan
 export const plan3 = planData3 as PartPlan
-export const parts = [plan, plan2, plan3]
+export const plan4 = planData4 as PartPlan
+export const parts = [plan, plan2, plan3, plan4]
 
 export const totalSeconds = (p: PartPlan) => p.shots.reduce((n, s) => n + s.duration, 0)
 
@@ -153,6 +155,19 @@ export const dialogueScript: DialogueLine[] = [
   { part: '03', scene: 6, characterId: 'ghost', text: 'He\'s at the tower. He\'s coming back.', emotionalContext: 'dual presence, ancient urgency', voiceDirective: 'dual voice, echoing, urgent' },
   { part: '03', scene: 7, characterId: 'aiko', text: 'I got you in. One problem. The glove is the connection. Cut the glove, cut the signal. And when you see him… he will be kind. He is always kind. That is the trap.', emotionalContext: 'confession, warning, fear', voiceDirective: 'urgent, honest, terrified' },
   { part: '03', scene: 8, characterId: 'aarav', text: 'He took my father\'s face. I want it back. And then I\'m going to close the sky.', emotionalContext: 'resolve, grief, final declaration of war', voiceDirective: 'iron resolve, quiet fury, declaration' },
+
+  { part: '04', scene: 1, characterId: 'lena', text: 'Every shadow I\'ve ever crossed in this city… I can jump through. But lately, something has been jumping back.', emotionalContext: 'unease, confession, case-file voiceover', voiceDirective: 'dry noir narration, controlled, tired' },
+  { part: '04', scene: 2, characterId: 'lena', text: 'Case 1986/4419. Girl, age nine, separated from guardian. Status: unresolved.', emotionalContext: 'detective ritual, dawning dread', voiceDirective: 'flat procedural read, cracking at "unresolved"' },
+  { part: '04', scene: 3, characterId: 'vane', text: 'Dad? Dad — the light. Dad… dad\'s gone into the light.', emotionalContext: 'young grief, origin wound, 1986 echo', voiceDirective: 'young male voice, breaking, raw first loss' },
+  { part: '04', scene: 4, characterId: 'aarav', text: 'He keeps faces the way you keep case files. Mine is the newest.', emotionalContext: 'cold anger, violation, need for justice', voiceDirective: 'low, clipped, frost-edged fury' },
+  { part: '04', scene: 4, characterId: 'ghost', text: 'The girl in the yellow coat did not die. Nothing crosses a shard and dies. It is kept.', emotionalContext: 'impossible comfort, ancient calm', voiceDirective: 'dual echo voice, gentle, weightless' },
+  { part: '04', scene: 5, characterId: 'lena', text: 'Mara. I know you don\'t remember me, but—', emotionalContext: 'hope, fear of rejection, sisterhood', voiceDirective: 'trembling, warm, restrained tears' },
+  { part: '04', scene: 5, characterId: 'bo', text: 'One minute per jump. That\'s what they take. You\'re up to hours now, Lee. I can always tell. You smell like torn paper.', emotionalContext: 'matter-of-fact affection, eerie child wisdom', voiceDirective: 'nine-year-old girl, dry humor, old soul' },
+  { part: '04', scene: 6, characterId: 'vane', text: 'If you took him into the light, then I will reach into the light and take something back. Every year. Whatever it costs. Whatever it eats.', emotionalContext: 'the vow, origin of forty years of patience', voiceDirective: 'young Vane, vow screamed into glass rain' },
+  { part: '04', scene: 7, characterId: 'lena', text: 'You knew her. You\'ve known about her for forty years.', emotionalContext: 'betrayal, controlled rage', voiceDirective: 'low, even, authoritative menace' },
+  { part: '04', scene: 7, characterId: 'vane', text: 'Your sister is not dead, Detective. She is stored. Between stamps, in the dark, dry and nine. I could show you where.', emotionalContext: 'librarian calm, terrible offer', voiceDirective: 'warm, precise, endlessly patient' },
+  { part: '04', scene: 8, characterId: 'aarav', text: 'My father\'s face. Your sister. Bo\'s hearing. Rose\'s years. He keeps receipts for all of it.', emotionalContext: 'inventory of losses, shared resolve', voiceDirective: 'quiet, deliberate, cataloguing anger' },
+  { part: '04', scene: 8, characterId: 'lena', text: 'Then we rob him.', emotionalContext: 'declaration, partnership sealed, smirk under exhaustion', voiceDirective: 'dry, certain, half a laugh' },
 ]
 
 export interface PartPlan {

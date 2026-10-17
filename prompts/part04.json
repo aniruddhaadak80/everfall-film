@@ -1,0 +1,178 @@
+{
+  "part": "04",
+  "title": "Shadow Detective",
+  "resolution": "1080p",
+  "defaultModel": "bytedance/seedance-2-0",
+  "shots": [
+    {
+      "id": "01",
+      "desc": "Ash of the first Crack",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Night police evidence locker lit by rain-streaked skylight, a 31-year-old woman detective in a brown leather jacket sits at a metal table before a dead crystal shard in an evidence tray, the shard ticks with faint amber light as her shadow slides across it, film noir mood, photorealistic, slow push-in camera, cinematic grain, cold blue and amber"
+    },
+    {
+      "id": "02",
+      "desc": "Box 1986",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Macro shot of hands breaking the wax seal of an old cardboard evidence box marked only with a sticker, lid lifting to reveal faded photographs and a single child's shoe resting inside, forty years of dust rising into a shaft of skylight like it has been waiting, photorealistic, overhead angle slow tilt, volumetric dust, film grain"
+    },
+    {
+      "id": "03",
+      "desc": "Photos that hum",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Extreme close-up of a faded photograph of a small crack in the sky above a city street, a woman's finger touching the photo edge as faint amber shardlight crawls across the print, on the wall behind her two human shadows appear where one person stands, photorealistic, eerie stillness, macro lens shallow depth, cold noir grade"
+    },
+    {
+      "id": "04",
+      "desc": "First echo jump",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "A female detective steps down into her own shadow on a wet floor and falls through darkness, dissolving into a vertical tunnel of grayscale memories, then lands hard on an old city street forty years in the past, older trams and a distant bright hairline crack in the sky, color grade desaturated teal, photorealistic, dynamic falling handheld camera, film grain"
+    },
+    {
+      "id": "05",
+      "desc": "A boy at the Crack",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "Echo-shadow of forty years ago: a 22-year-old man with gray-blue eyes and silver hair stands in glass rain under a small tear in the sky, holding a pair of empty leather gloves while a dissolving male figure is pulled slowly upward into the tear like ink lifted from paper, desaturated teal grade with warm shardlight, photorealistic, slow crane down, tragic cinematic composition"
+    },
+    {
+      "id": "06",
+      "desc": "Girl in the yellow coat",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Echo-shadow of the first Crack day: a nine-year-old girl in a bright yellow raincoat stands on tiptoes reaching her hand into a small refracted tear of light above a tram street, the light bending around her fingers, wet asphalt reflections, desaturated teal surroundings with the single warm light source at the tear, photorealistic, low child-height camera angle, film grain"
+    },
+    {
+      "id": "07",
+      "desc": "Warnings at the safehouse",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Dim hideout interior, a team gathers around a plank table as a young Indian man in a grey hoodie with blue ring tattoos on his neck stands bandaged and cold-eyed, a female detective slams an old evidence box onto the table sending dust into lamplight, a Japanese physicist in red glasses and a nun in a white saree react, photorealistic, handheld mid-shot, tense practical lighting"
+    },
+    {
+      "id": "08",
+      "desc": "Shadows remember",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "A pale androgynous figure with long black hair streaked white, grey eyes with a faint gold ring, appears mid-room out of focus then sharp, gesturing and translucent replay-shadows of past events rising like smoke shapes in the air around them, oversized grey sweater, moody single-source light, photorealistic, slow orbital camera, mysterious cinematic tone"
+    },
+    {
+      "id": "09",
+      "desc": "The missing minute",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Overhead shot of a desk at night with two identical notebooks lying open, one page half torn out, a woman's hand hovering with a pen over a long list of crossed-out times, torn paper scraps scattered like molted skin, single warm desk lamp in cold blue room, photorealistic, slow overhead rotate, quiet insomnia mood"
+    },
+    {
+      "id": "10",
+      "desc": "Old Everfall skyline",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Wide establishing echo-shot of a 1980s industrial city at blue hour, older tram wires and brick chimneys, a vast river of crows arcing between rooftops, a thin virgin tear of warm light hanging small in the sky above the skyline, everything desaturated teal, photorealistic, slow aerial drift forward, epic quiet melancholy, film grain"
+    },
+    {
+      "id": "11",
+      "desc": "Tram station echo",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Echo-shadow of an old tram station in glass rain, a vintage tram endlessly arriving every few seconds in a perfect loop, droplets standing half-frozen in the air in places, desaturated teal palette, a nine-year-old girl in a yellow coat blurred waiting on the platform far end, photorealistic, locked-off wide with rain streaks, dreamlike repetition"
+    },
+    {
+      "id": "12",
+      "desc": "Mara alive in the loop",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "On the looped tram platform a nine-year-old girl sits swinging her feet reading a worn comic, unchanged and dry while rain avoids her, a 31-year-old woman detective in a leather jacket kneels before her reaching out with a shaking hand, tears and disbelief, desaturated teal with warm lamp on the girl, photorealistic, slow push-in to two-shot, heartbreaking cinematic grade"
+    },
+    {
+      "id": "13",
+      "desc": "The tower's long shadow",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "At noon a dark corporate tower casts an impossibly long shadow that swallows an entire street, a silhouette female detective walks into the shadow edge and the light dies step by step around her, then the deepest echo shows the street forty years ago under glass rain, photorealistic, high contrast light-to-dark lateral tracking shot, ominous cinematic tone"
+    },
+    {
+      "id": "14",
+      "desc": "Young Vane's promise",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "Echo-shadow extreme moment: a 22-year-old silver-haired man kneels in glass rain with fists pressed over empty leather gloves, screaming silently upward at a tear in the sky, rain hailing like glass around him glowing faintly warm, desaturated teal grade, photorealistic, low hero-angle slowly craning to overhead, raw grief and vow, film grain"
+    },
+    {
+      "id": "15",
+      "desc": "The watch in the fire",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "An echo-shadow of 1986 collapses as every frozen figure on an old street turns their heads toward camera at the exact same instant, streetlights flicker onto, a silver pocket watch spins mid-air into flames of blue shardlight, reality tearing like paper at the frame edges, photorealistic, whip-pan into disruption, horror-tinged cinematic grade"
+    },
+    {
+      "id": "16",
+      "desc": "Confrontation in the fog",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Night fogged pier, a 31-year-old detective in a brown leather jacket and a 62-year-old man in a black three-piece suit with silver pocket watch and black gloves stand apart with a photograph of a nine-year-old girl lying on wet planks between them, idle fairground lights offshore, photorealistic, wide symmetrical two-shot then slow dolly in, noir standoff mood"
+    },
+    {
+      "id": "17",
+      "desc": "She is stored",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "Close-up of a 62-year-old silver-haired man in black gloves speaking gentle unblinking calm under a single warm lamp on a dark pier, faint amber shardlight reflecting in his deep blue eyes, fog curling around his shoulders, photorealistic, slow push-in macro on eyes then rack to hands folded, intimate frightening quiet"
+    },
+    {
+      "id": "18",
+      "desc": "Lena's choice",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "A woman detective slides a photograph of a nine-year-old girl in a yellow coat into the inner pocket of her brown leather jacket, adjusts her sleeve with a steady jaw and cold eyes, fog haloed around her like a backlight, photorealistic, tight waist-up shot, decisive quiet heroism, noir grade"
+    },
+    {
+      "id": "19",
+      "desc": "The badge burns blue",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "Rooftop at dawn, a torn notebook burns in a coffee can with impossible glass-blue shardlight flames, two silhouettes watching side by side, a 13-year-old boy with taped glasses grinning up at them from a fire escape below, cold blue sky just turning warm, photorealistic, wide slow orbit, hopeful after-battle mood, gentle grain"
+    },
+    {
+      "id": "20",
+      "desc": "New page, old file",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Final shot: an empty open notebook page on a rooftop ledge with one blue-light pen stroke just begun, beyond it the dark corporate tower on the horizon under a slowly healing dawn sky, a blue ring tattooed hand leaves the frame, photorealistic, slow pull-back to wide, unresolved rising-chord ending, cinematic film grain"
+    }
+  ]
+}
