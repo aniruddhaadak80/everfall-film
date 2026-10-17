@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { arc, characters, parts, themes, totalSeconds, type PartPlan, type Shot } from './data'
+import { arc, characters, parts, themes, totalSeconds, dialogueScript, type PartPlan, type Shot } from './data'
 import { beltCommand, CopyButton, Section } from './components'
 
-type Tab = 'overview' | 'story' | 'characters' | 'shots' | 'music' | 'pipeline'
+type Tab = 'overview' | 'story' | 'characters' | 'shots' | 'music' | 'voice' | 'pipeline'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'overview', label: 'Overview' },
@@ -10,6 +10,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'characters', label: 'Characters' },
   { id: 'shots', label: 'Shot List' },
   { id: 'music', label: 'Music' },
+  { id: 'voice', label: 'Voice/TTS' },
   { id: 'pipeline', label: 'Pipeline' },
 ]
 
@@ -251,6 +252,101 @@ export default function App() {
           </Section>
         )}
 
+        {tab === 'voice' && (
+          <>
+            <Section title="Character Voice Settings" right={<span className="pill">{characters.length} voices configured</span>}>
+              <div className="voice-grid">
+                {characters.map((c) => (
+                  <article key={c.id} className="voice-char" style={{ borderColor: c.color }}>
+                    <header>
+                      <span className="char-dot" style={{ background: c.color }} />
+                      <div>
+                        <h3>{c.name}</h3>
+                        <span className="char-role">{c.role}</span>
+                      </div>
+                    </header>
+                    <p className="char-voice">{c.voice}</p>
+                    {c.voiceSettings && (
+                      <dl className="voice-settings">
+                        <div><dt>Provider</dt><dd>{c.voiceSettings.provider}</dd></div>
+                        <div><dt>Voice ID</dt><dd><code>{c.voiceSettings.voiceId}</code></dd></div>
+                        <div><dt>Stability</dt><dd>{c.voiceSettings.stability ?? '—'}</dd></div>
+                        <div><dt>Similarity</dt><dd>{c.voiceSettings.similarityBoost ?? '—'}</dd></div>
+                        <div><dt>Style</dt><dd>{c.voiceSettings.style ?? '—'}</dd></div>
+                        <div><dt>Speed</dt><dd>{c.voiceSettings.speed ?? '—'}</dd></div>
+                      </dl>
+                    )}
+                    <details className="char-prompt">
+                      <summary>copy ElevenLabs curl</summary>
+                      <pre className="curl-cmd">
+{`curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/${c.voiceSettings?.voiceId || 'VOICE_ID'}" \
+  -H "xi-api-key: $ELEVENLABS_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Your dialogue here", "model_id": "eleven_multilingual_v2", "voice_settings": {"stability": ${c.voiceSettings?.stability ?? 0.5}, "similarity_boost": ${c.voiceSettings?.similarityBoost ?? 0.75}, "style": ${c.voiceSettings?.style ?? 0}, "speed": ${c.voiceSettings?.speed ?? 1.0}}}'`}
+                      </pre>
+                      <CopyButton text={`curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/${c.voiceSettings?.voiceId || 'VOICE_ID'}" -H "xi-api-key: $ELEVENLABS_API_KEY" -H "Content-Type: application/json" -d '{"text": "Your dialogue here", "model_id": "eleven_multilingual_v2", "voice_settings": {"stability": ${c.voiceSettings?.stability ?? 0.5}, "similarity_boost": ${c.voiceSettings?.similarityBoost ?? 0.75}, "style": ${c.voiceSettings?.style ?? 0}, "speed": ${c.voiceSettings?.speed ?? 1.0}}'}`} label="copy curl" />
+                    </details>
+                  </article>
+                ))}
+              </div>
+            </Section>
+
+            <Section title="Full Dialogue Script — TTS Ready" right={<span className="pill">{dialogueScript.length} lines across all parts</span>}>
+              <div className="dialogue-grid">
+                {parts.map((p) => {
+                  const lines = dialogueScript.filter((d) => d.part === p.part)
+                  if (lines.length === 0) return null
+                  return (
+                    <div key={p.part} className="dialogue-part">
+                      <h3>Part {p.part} — {p.title}</h3>
+                      <ul className="dialogue-lines">
+                        {lines.map((line, i) => (
+                          <li key={`${p.part}-${i}`} className="dialogue-line">
+                            <div className="dialogue-header">
+                              <span className="dialogue-char" style={{ borderColor: characters.find(c => c.id === line.characterId)?.color }}>
+                                {characters.find(c => c.id === line.characterId)?.name}
+                              </span>
+                              <span className="muted">Scene {line.scene}</span>
+                            </div>
+                            <p className="dialogue-text">{line.text}</p>
+                            {line.emotionalContext && <p className="dialogue-context"><em>[{line.emotionalContext}]</em></p>}
+                            {line.voiceDirective && <p className="dialogue-directive"><strong>Voice:</strong> {line.voiceDirective}</p>}
+                            <div className="dialogue-actions">
+                              <CopyButton text={line.text} label="copy text" />
+                              {characters.find(c => c.id === line.characterId)?.voiceSettings && (
+                                <CopyButton
+                                  text={`curl -X POST "https://api.elevenlabs.io/v1/text-to-speech/${characters.find(c => c.id === line.characterId)!.voiceSettings!.voiceId}" -H "xi-api-key: $ELEVENLABS_API_KEY" -H "Content-Type: application/json" -d '{"text": "${line.text.replace(/"/g, '\\"')}", "model_id": "eleven_multilingual_v2", "voice_settings": {"stability": ${characters.find(c => c.id === line.characterId)!.voiceSettings!.stability}, "similarity_boost": ${characters.find(c => c.id === line.characterId)!.voiceSettings!.similarityBoost}, "style": ${characters.find(c => c.id === line.characterId)!.voiceSettings!.style}, "speed": ${characters.find(c => c.id === line.characterId)!.voiceSettings!.speed}}}'`}
+                                  label="copy TTS curl"
+                                />
+                              )}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                })}
+              </div>
+            </Section>
+
+            <Section title="Music & Foley Cues" right={<span className="pill">{themes.length} themes</span>}>
+              <table className="cue-table">
+                <thead>
+                  <tr><th>Theme</th><th>When</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  {themes.map((t) => (
+                    <tr key={t.id}>
+                      <td><b>{t.id}</b> {t.name}</td>
+                      <td>{t.when}</td>
+                      <td>{t.desc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Section>
+          </>
+        )}
         {tab === 'pipeline' && (
           <>
             <Section title="How a part gets filmed">
@@ -291,7 +387,7 @@ bun scripts/assemble_part01.mjs`}</pre>
       </main>
 
       <footer className="foot">
-        EVERFALL · AI feature film · Part 01 “The Crack” · made with the browser + cloud video models
+        EVERFALL · AI feature film · 3 parts ready · made with the browser + cloud video models
       </footer>
     </div>
   )

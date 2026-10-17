@@ -1,0 +1,172 @@
+{
+  "part": "03",
+  "title": "THE IRON BOY",
+  "resolution": "1080p",
+  "defaultModel": "bytedance/seedance-2-0",
+  "shots": [
+    {
+      "id": "01",
+      "desc": "The fake emergency",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Night street in an old industrial district, a tram has crashed against a building and small figures of children are trapped inside, a 24-year-old Indian man in a grey hoodie runs toward the crash from an alley, emergency lights painting the wet asphalt red and blue, photorealistic, fast handheld camera, cinematic tension, film grain"
+    },
+    {
+      "id": "02",
+      "desc": "The trap is an iron foundry",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Interior of an abandoned iron foundry, massive cold furnaces and hanging chains, the crashed tram is revealed to be a hologram projection that flickers and dies, a 24-year-old man in a grey hoodie stops running and looks up at the walls closing in, photorealistic, slow dolly-in, cold industrial light, film grain"
+    },
+    {
+      "id": "03",
+      "desc": "Aarav wakes in the glass cell",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A 24-year-old Indian man in a grey hoodie wakes sitting against the wall of a glass cell, his blue ring tattoos dim and flickering, the cell suspended over a dark machine hall, he touches the glass and it rings like a bell, photorealistic, slow push-in, cold blue light, film grain"
+    },
+    {
+      "id": "04",
+      "desc": "Vane visits, polite",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/vane.png",
+      "prompt": "A 62-year-old wealthy man in a black three-piece suit and black leather gloves stands outside a glass cell, hands clasped behind his back, watching a young man inside with calm academic interest, a small red mark under his left eye, vast dark machine hall behind him, photorealistic, slow push-in, warm polite menace"
+    },
+    {
+      "id": "05",
+      "desc": "Iron is the key",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Close-up through glass of an old man's gloved hand tracing the outline of a young man's face, a holographic diagram of a star-shard rotating between them, iron filings floating in the air and being repelled by the shard's glow, photorealistic, macro lens, blue light"
+    },
+    {
+      "id": "06",
+      "desc": "The memory taken",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A gloved hand touches a young man's temple, a thin red thread of light passes from his head into the man's palm, the young man's face goes slack and a tear runs down, the blue rings on his arm go dark for three seconds, photorealistic, extreme close-up, cold light"
+    },
+    {
+      "id": "07",
+      "desc": "Aiko in the tower lab",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "A 36-year-old Japanese scientist with red glasses and a white lab coat sneaks through a high-security laboratory corridor, checking over her shoulder, wall screens showing a live feed of a man in a glass cell, she swipes a stolen keycard, photorealistic, handheld camera, cold fluorescent light"
+    },
+    {
+      "id": "08",
+      "desc": "The readings condemn him",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Holographic medical data streaming past a woman's worried face, a star-shard diagram with a flatline prediction and the word TERMINAL in red, her hand hovering over a large red switch, photorealistic, close-up, blue glow"
+    },
+    {
+      "id": "09",
+      "desc": "Aiko cuts the power",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "The 36-year-old scientist slams her palm onto a huge red emergency switch, every light in the machine hall dies at once, glass cells hiss open, she breathes hard, emergency red washlight rising, photorealistic, dramatic low angle"
+    },
+    {
+      "id": "10",
+      "desc": "Escape in the dark",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A 24-year-old man in a grey hoodie drops from an opened glass cell into a dark machine hall lit only by emergency washlights, he lands hard, rolls, runs, massive chains swinging overhead, photorealistic, fast handheld chase, red and blue lighting"
+    },
+    {
+      "id": "11",
+      "desc": "The shards call out",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Montage: six points of blue light across a night city skyline pulse in perfect unison, a nun in a saree clutching her chest on a shelter roof, a boy on a rooftop grabbing his glasses, a detective freezing mid-step on a street, all feeling the same pull, photorealistic, four quick cuts"
+    },
+    {
+      "id": "12",
+      "desc": "Ghost names the tower",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "A mysterious androgynous young person with a white-streaked hair stands on a rooftop at night facing the glass tower, grey eyes with a gold ring, the city lights reflected in their eyes, two heartbeats implied, photorealistic, slow push-in, cold rim light"
+    },
+    {
+      "id": "13",
+      "desc": "Lena's dead-shard compass",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "A 31-year-old woman detective holds a grey dead star-shard in her palm on a dark rooftop, a thin blue line of light extends from it toward the distant tower like a compass needle, rain starting, photorealistic, close-up, cold blue glow"
+    },
+    {
+      "id": "14",
+      "desc": "Bo rides the sound",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "A 13-year-old boy with big taped glasses and a yellow rain jacket crouches on a rooftop edge and screams down at the street, a visible sound wave carries him surfing down toward a distant glass tower, wind in his jacket, night city below, photorealistic, dynamic tracking shot"
+    },
+    {
+      "id": "15",
+      "desc": "Rose arms the children",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "A 58-year-old Indian nun in a white saree lines up a row of teenage children in a shelter, pressing small iron tools into their hands, her light blade folded at her border, her calm hawk eyes, warm shelter light, photorealistic, slow dolly"
+    },
+    {
+      "id": "16",
+      "desc": "Aiko's confession",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "The 36-year-old scientist stands before the group at the tower's service gate holding up a stolen access card, rain on her lab coat, her small wrong smile replaced by something honest and scared, photorealistic, over-the-shoulder shot"
+    },
+    {
+      "id": "17",
+      "desc": "The glove secret",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Holographic close-up of a black leather glove with a red glowing star-shard stitched into its lining, a woman's finger pointing at the shard, diagrams showing signal lines from the glove to six city points, photorealistic, macro hologram style"
+    },
+    {
+      "id": "18",
+      "desc": "Six at the tower door",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "Wide shot of six people standing before the massive service door of a glass skyscraper at night, a young man in a grey hoodie at the front, a detective, a boy in a yellow jacket, a nun in a white saree, a scientist, and a pale figure at the back, city lights below, photorealistic, epic wide shot, film grain"
+    },
+    {
+      "id": "19",
+      "desc": "Title card — Part 03",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "The words EVERFALL in clean white thin sans-serif letters above THE IRON BOY in smaller letters, centered over a glass skyscraper tower at night with a blue pulse of light rising up its side, cinematic, minimal, film grain, no other text"
+    }
+  ]
+}
