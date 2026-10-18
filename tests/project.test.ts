@@ -219,6 +219,71 @@ describe('part 04 shot plan (Shadow Detective)', () => {
   })
 })
 
+describe('part 05 shot plan (Six Bruises)', () => {
+  const plan5 = JSON.parse(read('prompts/part05.json'))
+
+  it('has 20 shots', () => {
+    expect(plan5.shots).toHaveLength(20)
+  })
+
+  it('targets 1080p with a defined title', () => {
+    expect(plan5.resolution).toBe('1080p')
+    expect(plan5.title).toBe('Six Bruises')
+  })
+
+  it('runs about 2 minutes', () => {
+    const sec = plan5.shots.reduce((n, s) => n + s.duration, 0)
+    expect(sec).toBeGreaterThan(100)
+    expect(sec).toBeLessThan(180)
+  })
+
+  it('every shot has a detailed prompt, safe duration, audio flag and valid model', () => {
+    for (const s of plan5.shots) {
+      expect(s.prompt.length).toBeGreaterThan(80)
+      expect(s.duration).toBeGreaterThanOrEqual(3)
+      expect(s.duration).toBeLessThanOrEqual(10)
+      expect(typeof s.generate_audio).toBe('boolean')
+      expect(s.model).toMatch(/^[a-z0-9-]+\/[a-z0-9-]+$/)
+    }
+  })
+
+  it('shot ids are unique', () => {
+    expect(new Set(plan5.shots.map((s) => s.id)).size).toBe(plan5.shots.length)
+  })
+
+  it('features the priced heroes and the archivist reveal', () => {
+    const refs = new Set(plan5.shots.map((s) => s.reference).filter(Boolean))
+    for (const n of ['bo', 'rose', 'aiko', 'lena', 'aarav', 'ghost', 'archivist']) {
+      expect(refs.has(`looks/${n}.png`)).toBe(true)
+    }
+  })
+
+  it('every shot desc appears in the part05 shot list', () => {
+    const shots5 = read('12-SHOT-LIST-PART-05.md')
+    for (const s of plan5.shots) {
+      expect(shots5).toContain(s.desc)
+    }
+  })
+
+  it('the part05 script exists with 8 scenes and the key lines', () => {
+    const script5 = read('11-SCRIPT-PART-05.md')
+    expect(script5.match(/### SCENE \d+/g)).toHaveLength(8)
+    for (const line of ['the only day you had', 'Sit, Tobi', 'stopped charging interest']) {
+      expect(script5).toContain(line)
+    }
+  })
+
+  it('shot descriptions stay unique across parts 01–05', () => {
+    const all = [
+      ...plan.shots, ...plan2.shots,
+      ...JSON.parse(read('prompts/part03.json')).shots,
+      ...JSON.parse(read('prompts/part04.json')).shots,
+      ...plan5.shots,
+    ].map((s) => s.desc)
+    expect(new Set(all).size).toBe(all.length)
+  })
+})
+
 describe('script + shot list consistency', () => {
   const script = read('03-SCRIPT-PART-01.md')
   const shots = read('04-SHOT-LIST-PART-01.md')
@@ -291,7 +356,8 @@ describe('project structure', () => {
       '05-SCRIPT-PART-02.md', '06-SHOT-LIST-PART-02.md',
       '07-SCRIPT-PART-03.md', '08-SHOT-LIST-PART-03.md',
       '09-SCRIPT-PART-04.md', '10-SHOT-LIST-PART-04.md',
-      'prompts/part02.json', 'prompts/part03.json', 'prompts/part04.json',
+      '11-SCRIPT-PART-05.md', '12-SHOT-LIST-PART-05.md',
+      'prompts/part02.json', 'prompts/part03.json', 'prompts/part04.json', 'prompts/part05.json',
     ]) {
       expect(existsSync(join(root, f))).toBe(true)
     }

@@ -2,7 +2,7 @@
 
 **Project folder:** `everfall-film/` — your complete AI feature-film production system.
 
-🔗 **Studio (live):** https://studio-kx109quvf-aniruddha-adaks-projects.vercel.app · **Repo:** https://github.com/aniruddhaadak80/everfall-film
+🔗 **Studio (live):** https://studio-qcr9g80ci-aniruddha-adaks-projects.vercel.app · **Repo:** https://github.com/aniruddhaadak80/everfall-film
 
 **Genre:** Superhero action-fantasy (Avengers-style team movie)
 **Language of the film:** Simple English (easy to understand), with some Bengali flavor for the city
@@ -26,7 +26,8 @@ So we do it **part by part**, like you said. Each part is 4–8 minutes and is f
 | Part 02 "Wanted Sparks" | 19 shots, 1080p, sound + voices, final cut | READY TO FILM (needs video API credits) |
 | Part 03 "The Iron Boy" | 19 shots, 1080p, script + shot plan complete | READY TO FILM (needs video API credits) |
 | Part 04 "Shadow Detective" | 20 shots, 1080p, Lena's sister + Vane's forty-year origin | READY TO FILM (needs video API credits) |
-| Parts 05–20 | Same pipeline, repeat | Later — you join in |
+| Part 05 "Six Bruises" | 20 shots, 1080p, every price paid — Bo's silence, Ghost named "Tobi" | READY TO FILM (needs video API credits) |
+| Parts 06–20 | Same pipeline, repeat | Later — you join in |
 
 Cost/time math for Part 01 (23 shots × ~5 seconds average):
 - Video generation: ~2 minutes of footage → roughly $10–$60 in API credits (depends on model)

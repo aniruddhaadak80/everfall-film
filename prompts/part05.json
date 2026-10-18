@@ -1,0 +1,182 @@
+{
+  "part": "05",
+  "title": "Six Bruises",
+  "resolution": "1080p",
+  "defaultModel": "bytedance/seedance-2-0",
+  "shots": [
+    {
+      "id": "01",
+      "desc": "The receipts wall",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Day interior of a squatter safehouse, a female detective in a brown leather jacket pins photos and torn tags onto a giant chalk-covered wall with names like heirlooms, warm chalk-light, a young iron-powered man in a grey hoodie and a nun in a white saree stand at the edges of frame, photorealistic, slow lateral track, documentary realist grade, film grain"
+    },
+    {
+      "id": "02",
+      "desc": "One pull, one proof",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "Close-up of a Japanese physicist woman with red framed glasses sketching spiral gravity diagrams on glass with a marker, arrows showing two shadows meeting and one small object returning through a bright seam, burn scar visible on her wrist, cool morning light, photorealistic, slow push-in on the glass, focused scientific mood"
+    },
+    {
+      "id": "03",
+      "desc": "Rose pays a week",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "Golden hour courtyard, a 58-year-old Indian nun in a white saree drops a glowing blade of solid light mid-swing and it dissolves into sparks, her face ages visibly in two rough steps, new tension lines cresting, hawk-like eyes steady through it, photorealistic, locked low angle, punishing golden backlight, cinematic sorrow"
+    },
+    {
+      "id": "04",
+      "desc": "Tally book",
+      "duration": 4,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Extreme macro of a small black leather book, four pencil tallies on a lined page and a rough hand pressing a fifth stroke slowly, the graphite shining wet, thumb-worn cover, warm side light, photorealistic, static macro with shallow focus, quiet devastation"
+    },
+    {
+      "id": "05",
+      "desc": "Aiko holds the tram",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aiko.png",
+      "prompt": "A Japanese physicist woman in a lab coat catches a falling vintage tram car under an intangible gravity dome, the metal groaning a hair above the ground, her wrist bending wrong as if her bones weighed like sandbags, grit of her burned teeth visible, yard dusk, photorealistic, handheld strain shot with slight tilt-up, awe and cost in one frame"
+    },
+    {
+      "id": "06",
+      "desc": "Frost breath",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/aarav.png",
+      "prompt": "A 24-year-old Indian man in a grey hoodie with blue ring tattoos pulls rust and iron filings off a brick wall into a glowing disc in his palm, frosted breath pouring like engine exhaust into cold air, goosebumps in the skin, yard golden hour against cold cast, photorealistic, close half-profile, controlled power read"
+    },
+    {
+      "id": "07",
+      "desc": "What day is it",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/lena.png",
+      "prompt": "Interior, a female detective freezes mid-room and softly asks what day it is, a 13-year-old boy with taped glasses and teammates at a table trade a careful glance and answer without alarm, warm chalk-light mismatched with cold evening outside, photorealistic, subtle rack from her lost eyes to the table, fragile domestic tension"
+    },
+    {
+      "id": "08",
+      "desc": "The proof run",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Echo-shadow of an old brick stairwell under glass rain, bound charcoal shadows overlay across the steps like ink, a globe of warped gravity holds a doorway of dust open, a woman detective stretches her arm through the seam into the dark, desaturated teal with a warm seam glow, photorealistic, slow crane down the stairwell, ritualized courage, film grain"
+    },
+    {
+      "id": "09",
+      "desc": "The dry shoe",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "A child's canvas shoe floats through a seam of light from a dark storage echo into the present, completely dry with a halo of forty-year dust, a woman's hands catch it in disbelief, amber seam light against cold surroundings, photorealistic, slow motion push-in macro landing in hands, small object huge meaning"
+    },
+    {
+      "id": "10",
+      "desc": "Doors that open both ways",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "A pale androgynous figure with long black hair streaked white stands at the mouth of a glowing seam stairwell, translucent replay-shadows of the pull-run playing backwards around them, oversized grey sweater, conspiratorial stillness, photorealistic, push-in to their unreadable face, warning mood, moody teal"
+    },
+    {
+      "id": "11",
+      "desc": "Collapse at the wall",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Night, a black rotor drone fires a piercing red beam that punches a squatter building's west wall, the wall slumping in slow waves with plume columns of dust rising, beams crashing down where a young iron-powered man in a grey hoodie just stood, emergency-grade sparks, photorealistic, whip of handheld impact, cold violence"
+    },
+    {
+      "id": "12",
+      "desc": "Three seconds forward",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "Under a fall of collapsing beams a pale androgynous figure with a white hair streak walks calmly through debris that skips three frames forward around them, teammates snap to new positions mid-air like cut film, oversized grey sweater, photorealistic, stuttered step-print camera effect, eerie time-skip ballet"
+    },
+    {
+      "id": "13",
+      "desc": "The tourist",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "Extreme close-up of a pale androgynous face with long black hair and one white streak blinking blankly at a team of strangers in a dust-filled room, grey eyes with a faint gold ring searching memory and finding nothing, oversized grey sweater, photorealistic, tight sad push-in, haunted emptiness"
+    },
+    {
+      "id": "14",
+      "desc": "Drone rain",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Wide night shot of dozens of black rotor drones pouring over a rooftop edge like gulls gone wrong, red eyes in swarming formation against a city glow, a 13-year-old boy stepping up to the roofline to meet them, photorealistic, rising aerial reveal, ominous swarm choreography, cold grade"
+    },
+    {
+      "id": "15",
+      "desc": "The last scream",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "A 13-year-old Bangladeshi-Indian boy with taped glasses and curly hair screams from a rooftop, a visible expanding ring of air-shockwave distorting the drone swarm and dropping four of them in a hail, mid-scream his face goes blank as the world mutes around him, photorealistic, slow-motion wide then snapping to his silent open mouth, tragic peak"
+    },
+    {
+      "id": "16",
+      "desc": "Dark shard",
+      "duration": 5,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "prompt": "Close-up of a chest-mounted star shard glowing amber then flickering out black like a dying bulb, a boy's open mouth screaming silently above it, soundless rain of debris standing half-frozen in the air, photorealistic, macro static shot with heartbreaking stillness, dead-shard dark"
+    },
+    {
+      "id": "17",
+      "desc": "One blade, one year",
+      "duration": 7,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/rose.png",
+      "prompt": "A 58-year-old Indian nun in a white saree fights a drone swarm alone with a burning blade of solid light, one impossible spinning arc cutting five drones from the sky, each flash of her blade faintly subtracting from her youth, courtyard night, photorealistic, sweeping one-take hero shot, warrior grace laced with grief, warm light on cold metal"
+    },
+    {
+      "id": "18",
+      "desc": "Circles in the floor",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/bo.png",
+      "prompt": "Interior, a 13-year-old boy with taped glasses presses his small palm flat to worn floorboards and watches invisible footsteps push out expanding rings of dust like water ripples, cotton in his ears, a nun's feet walking gently toward him, photorealistic, top-down to side suture shot, learning-to-listen tenderness"
+    },
+    {
+      "id": "19",
+      "desc": "Third cup of tea",
+      "duration": 8,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/archivist.png",
+      "prompt": "Warm amber bookshop at night, a blind 80-year-old Indian woman with thick round glasses pours a third cup of tea and places it in an empty spot of the counter where an unseen figure should be, an androgynous pale figure with one white hair streak watches from the doorway holding a brown paper bag, photorealistic, slow lateral dolly, memory returning in a single gesture"
+    },
+    {
+      "id": "20",
+      "desc": "Rhythm on the rail",
+      "duration": 6,
+      "model": "bytedance/seedance-2-0",
+      "generate_audio": true,
+      "reference": "looks/ghost.png",
+      "prompt": "Rooftop at dawn, a 13-year-old boy taps a simple rhythm on a metal rail and a pale androgynous figure with one white streak of black hair taps the exact same rhythm back from memory, below them a grate exhales warm air into the cold, photorealistic, slow pull-back to wide dawn city, quiet found-family hope, gentle grain"
+    }
+  ]
+}

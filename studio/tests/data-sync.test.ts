@@ -31,8 +31,14 @@ describe('studio data sync', () => {
     expect(a).toBe(b)
   })
 
-  it('every part folder copy exists for parts 01-04', () => {
-    for (const p of ['part01', 'part02', 'part03', 'part04']) {
+  it('studio part05 copy matches the canonical prompts/part05.json', () => {
+    const a = readFileSync(join(studioRoot, 'src', 'part05.json'), 'utf8')
+    const b = readFileSync(join(filmRoot, 'prompts', 'part05.json'), 'utf8')
+    expect(a).toBe(b)
+  })
+
+  it('every part folder copy exists for parts 01-05', () => {
+    for (const p of ['part01', 'part02', 'part03', 'part04', 'part05']) {
       expect(existsSync(join(studioRoot, 'src', `${p}.json`))).toBe(true)
     }
   })

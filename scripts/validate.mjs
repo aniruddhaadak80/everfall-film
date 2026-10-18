@@ -78,9 +78,30 @@ const totalSec4 = plan4.shots.reduce((n, s) => n + s.duration, 0)
 check(totalSec4 > 100 && totalSec4 < 180, `part04 runtime ~2 min (${totalSec4}s)`)
 check(plan4.shots.filter((s) => s.reference).length >= 10, 'part04 has hero look-sheet shots')
 
+// ---- prompts/part05.json ----
+const plan5 = JSON.parse(read('prompts/part05.json'))
+check(plan5.shots.length === 20, `part05 has 20 shots (got ${plan5.shots.length})`)
+check(plan5.resolution === '1080p', 'part05 resolution is 1080p')
+check(plan5.title === 'Six Bruises', 'part05 title is Six Bruises')
+const ids5 = new Set(plan5.shots.map((s) => s.id))
+check(ids5.size === plan5.shots.length, 'part05 shot ids are unique')
+for (const s of plan5.shots) {
+  check(typeof s.prompt === 'string' && s.prompt.length > 80, `part05 shot ${s.id} prompt is detailed (>80 chars)`)
+  check(s.duration >= 3 && s.duration <= 10, `part05 shot ${s.id} duration 3–10s (got ${s.duration})`)
+  check(typeof s.model === 'string' && s.model.includes('/'), `part05 shot ${s.id} model set`)
+  check(typeof s.generate_audio === 'boolean', `part05 shot ${s.id} audio flag set`)
+}
+const totalSec5 = plan5.shots.reduce((n, s) => n + s.duration, 0)
+check(totalSec5 > 100 && totalSec5 < 180, `part05 runtime ~2 min (${totalSec5}s)`)
+check(plan5.shots.filter((s) => s.reference).length >= 10, 'part05 has hero look-sheet shots')
+const refNames5 = new Set(plan5.shots.map((s) => s.reference).filter(Boolean).map((r) => r.replace('looks/', '').replace('.png', '')))
+for (const need of ['bo', 'rose', 'aiko', 'lena', 'aarav', 'ghost', 'archivist']) {
+  check(refNames5.has(need), `part05 features look ref: ${need}`)
+}
+
 // ---- unique shot plans across all parts ----
-const allDescs = [...plan.shots, ...plan2.shots, ...plan3.shots, ...plan4.shots].map((s) => s.desc)
-check(new Set(allDescs).size === allDescs.length, 'shot descriptions are unique across parts 01–04')
+const allDescs = [...plan.shots, ...plan2.shots, ...plan3.shots, ...plan4.shots, ...plan5.shots].map((s) => s.desc)
+check(new Set(allDescs).size === allDescs.length, 'shot descriptions are unique across parts 01–05')
 
 // ---- characters ----
 const chars = read('02-CHARACTERS.md')
@@ -108,6 +129,10 @@ for (const s of plan3.shots) {
 const shotList4 = read('10-SHOT-LIST-PART-04.md')
 for (const s of plan4.shots) {
   check(shotList4.includes(s.desc), `part04 shot list matches: ${s.desc}`)
+}
+const shotList5 = read('12-SHOT-LIST-PART-05.md')
+for (const s of plan5.shots) {
+  check(shotList5.includes(s.desc), `part05 shot list matches: ${s.desc}`)
 }
 
 // ---- scripts ----
@@ -140,6 +165,14 @@ for (const line of ['Shadows remember', 'She is stored. Between stamps, in the d
   check(script4.includes(line), `part04 key line present: "${line}"`)
 }
 check(script4.includes('SHADOW DETECTIVE'), 'part04 title on the cover')
+const script5 = read('11-SCRIPT-PART-05.md')
+for (const scene of ['SCENE 1', 'SCENE 2', 'SCENE 3', 'SCENE 4', 'SCENE 5', 'SCENE 6', 'SCENE 7', 'SCENE 8']) {
+  check(script5.includes(scene), `part05 script has ${scene}`)
+}
+for (const line of ['the only day you had', 'Sit, Tobi', 'stopped charging interest']) {
+  check(script5.includes(line), `part05 key line present: "${line}"`)
+}
+check(script5.includes('SIX BRUISES'), 'part05 title on the cover')
 
 // ---- story bible ----
 const bible = read('01-STORY-BIBLE.md')
@@ -158,17 +191,18 @@ check(read('PIPELINE.md').includes('belt'), 'pipeline references belt CLI')
 check(read('README.md').includes('everfall-film'), 'readme references project')
 for (const f of [
   'scripts/make_characters.mjs', 'scripts/film_part01.mjs', 'scripts/assemble_part01.mjs', 'scripts/validate.mjs',
-  'prompts/part01.json', 'prompts/part02.json', 'prompts/part03.json', 'prompts/part04.json',
+  'prompts/part01.json', 'prompts/part02.json', 'prompts/part03.json', 'prompts/part04.json', 'prompts/part05.json',
   '05-SCRIPT-PART-02.md', '06-SHOT-LIST-PART-02.md',
   '07-SCRIPT-PART-03.md', '08-SHOT-LIST-PART-03.md',
   '09-SCRIPT-PART-04.md', '10-SHOT-LIST-PART-04.md',
-  'studio/src/part01.json', 'studio/src/part02.json', 'studio/src/part03.json', 'studio/src/part04.json',
+  '11-SCRIPT-PART-05.md', '12-SHOT-LIST-PART-05.md',
+  'studio/src/part01.json', 'studio/src/part02.json', 'studio/src/part03.json', 'studio/src/part04.json', 'studio/src/part05.json',
 ]) {
   check(existsSync(join(root, f)), `file exists: ${f}`)
 }
 
 // ---- studio mirrors stay optional? no: they must parse as JSON with the same shot counts ----
-for (const p of ['part01', 'part02', 'part03', 'part04']) {
+for (const p of ['part01', 'part02', 'part03', 'part04', 'part05']) {
   const studio = JSON.parse(read(`studio/src/${p}.json`))
   const canon = JSON.parse(read(`prompts/${p}.json`))
   check(studio.shots.length === canon.shots.length, `studio ${p} mirrors canonical shot count`)

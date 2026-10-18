@@ -2,6 +2,7 @@ import planData from './part01.json'
 import planData2 from './part02.json'
 import planData3 from './part03.json'
 import planData4 from './part04.json'
+import planData5 from './part05.json'
 
 export interface Shot {
   id: string
@@ -25,7 +26,8 @@ export const plan = planData as PartPlan
 export const plan2 = planData2 as PartPlan
 export const plan3 = planData3 as PartPlan
 export const plan4 = planData4 as PartPlan
-export const parts = [plan, plan2, plan3, plan4]
+export const plan5 = planData5 as PartPlan
+export const parts = [plan, plan2, plan3, plan4, plan5]
 
 export const totalSeconds = (p: PartPlan) => p.shots.reduce((n, s) => n + s.duration, 0)
 
@@ -168,6 +170,19 @@ export const dialogueScript: DialogueLine[] = [
   { part: '04', scene: 7, characterId: 'vane', text: 'Your sister is not dead, Detective. She is stored. Between stamps, in the dark, dry and nine. I could show you where.', emotionalContext: 'librarian calm, terrible offer', voiceDirective: 'warm, precise, endlessly patient' },
   { part: '04', scene: 8, characterId: 'aarav', text: 'My father\'s face. Your sister. Bo\'s hearing. Rose\'s years. He keeps receipts for all of it.', emotionalContext: 'inventory of losses, shared resolve', voiceDirective: 'quiet, deliberate, cataloguing anger' },
   { part: '04', scene: 8, characterId: 'lena', text: 'Then we rob him.', emotionalContext: 'declaration, partnership sealed, smirk under exhaustion', voiceDirective: 'dry, certain, half a laugh' },
+
+  { part: '05', scene: 1, characterId: 'lena', text: 'He kept every price on a shelf. Fine. Before we open the sky — we learn to reach through it. One pull. One proof.', emotionalContext: 'leadership by exhaustion, campaign logic', voiceDirective: 'level, tired authority, chalk-wall briefing' },
+  { part: '05', scene: 1, characterId: 'aiko', text: 'Theory: two bound shadows make a door. Through a door, one item comes back. Small. Dry. Unaged.', emotionalContext: 'clinical wonder, alpha-physicist cadence', voiceDirective: 'precise, fast, quietly thrilled' },
+  { part: '05', scene: 3, characterId: 'bo', text: 'That\'s Mara\'s shoe. That means Mara\'s IN there. That means rescue Saturday.', emotionalContext: 'hope arithmetic, ten-year-old planner', voiceDirective: 'bright staccato, deliberate joy' },
+  { part: '05', scene: 3, characterId: 'ghost', text: 'Careful. Doors that open one way… open the other way too.', emotionalContext: 'genuine fear, lived knowledge', voiceDirective: 'soft double-echo, warning, weightless' },
+  { part: '05', scene: 4, characterId: 'aiko', text: 'He\'s lost another day. He doesn\'t remember the plan. He doesn\'t remember us.', emotionalContext: 'horrified arithmetic, guilt at witnessed cost', voiceDirective: 'under the breath, flat, shaken' },
+  { part: '05', scene: 5, characterId: 'bo', text: 'Why is it quiet? Why can\'t you hear me? Why can\'t I—', emotionalContext: 'screaming into permanent silence, terror of invisibility', voiceDirective: 'silent-scream delivery, all consonants, no volume' },
+  { part: '05', scene: 5, characterId: 'rose', text: 'Enough, little thunder. You\'re done. Done.', emotionalContext: 'maternal steel cutting through panic and cost alike', voiceDirective: 'deep warm steadiness, two hard syllables at the end' },
+  { part: '05', scene: 6, characterId: 'bo', text: 'I can still see it. In the floor. Everything loud makes circles.', emotionalContext: 'grief turned into a discovery', voiceDirective: 'hoarse, quiet lightning, read out by Lena over it' },
+  { part: '05', scene: 6, characterId: 'aarav', text: 'You\'re the only one of us whose power was kindness that got loud. It doesn\'t leave. It just learned a new door.', emotionalContext: 'brother-quiet, naming him back into the team', voiceDirective: 'low, slow, iron-soft' },
+  { part: '05', scene: 7, characterId: 'archivist', text: 'You came in with the light rain. Forty years ago. Child\'s ticket. I still have your book. You paid with the only day you had.', emotionalContext: 'tender interrogation of memory, proof of personhood', voiceDirective: 'old and warm, deliberate, no pity' },
+  { part: '05', scene: 7, characterId: 'archivist', text: 'You are not a ghost, child. You are what the sky threw away empty. Sit, Tobi. This tea is garbage and you always drank it.', emotionalContext: 'the name given, terrible comfort, homecoming', voiceDirective: 'warm wrecking ball, small laugh at the end' },
+  { part: '05', scene: 8, characterId: 'lena', text: 'Six bruises, one each. We\'re not alive because we\'re strong. We\'re alive because we stopped charging interest.', emotionalContext: 'ethos of the team, voiceover close', voiceDirective: 'dry noir V.O., leaning on the last two words' },
 ]
 
 export interface PartPlan {
